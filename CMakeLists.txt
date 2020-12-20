@@ -21,6 +21,7 @@ include_directories(
 
 add_executable(replica_sync
     source/replica_sync.cpp
+    source/network.cpp
     include/thread.h
     include/mpmc_bounded_queue.h
 )

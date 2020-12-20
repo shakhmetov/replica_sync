@@ -8,6 +8,7 @@
 #include <set>
 #include <list>
 #include <string.h>
+#include <network.h>
 
 enum {
     SHARDS = 13,
@@ -428,8 +429,10 @@ int get (uint32_t key, uint32_t & value, std::vector<pairuu_t> owners[])
 
 uint32_t values[DATA_COUNT];
 
-int main (void)
+int main (int argc, char ** argv)
 {
+    init_network (atoi(argv[1]) );
+
     for ( auto & q : s_node_channels ) q.create(2047);
     for ( auto & q : s_client_channels ) q.create(1023);
 
